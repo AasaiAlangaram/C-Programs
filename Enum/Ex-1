@@ -1,0 +1,19 @@
+#include  <stdio.h>
+// typedef enum with name alpha 
+typedef enum
+{
+    aa,
+    bb,
+    cc,
+    dd
+}alpha;
+
+int main(void)
+{
+    for(int c = aa;c<=dd;c++)
+    {
+        printf("%d\n",c);
+    }
+    
+    return 0;
+}
