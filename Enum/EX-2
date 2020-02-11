@@ -1,0 +1,17 @@
+//gcc 5.4.0
+#if 1
+
+//Example of two enum name have same values
+#include  <stdio.h>
+
+enum year{Jan, Feb, Mar, Apr, May, Jun, Jul,  
+          Aug, Sep, Oct, Nov, Dec}; 
+enum lamp{low=0,high,drl=0};
+  
+int main() 
+{ 
+   printf("%d, %d, %d", low, high, drl);
+    
+   return 0; 
+}
+#endif
