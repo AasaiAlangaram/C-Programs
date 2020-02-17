@@ -1,0 +1,12 @@
+#include  <stdio.h>
+
+int main(void)
+{
+    
+    unsigned int a = 259;
+    //Character pointer only points to first 8bits
+    unsigned char *p = &a;
+    
+    printf("%d",*p);
+    return 0;
+}
