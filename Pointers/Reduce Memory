@@ -1,0 +1,23 @@
+#include<stdio.h>
+#include<string.h>
+int factorial(int );
+ 
+int main()
+{
+    int i;
+    char *name[] = {
+                         "aa",
+                         "aasai",
+                         "tamil",
+                         "ranjith",
+                         "praveen"
+                     };
+ 
+    for(i = 0; i < 5; i++)
+    {
+        printf("String = %10s", name[i] );
+        printf("\tAddress of string = %u\n", name[i]);
+    }
+
+    return 0;
+}
