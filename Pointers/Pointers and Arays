@@ -1,0 +1,14 @@
+#include  <stdio.h>
+
+int main(void)
+{
+    int arr[] = {1,2,3,4,5,6};
+    
+    char *ptr = arr;
+    // It has 6 Elemnts int size is 4byte so 6*4=24
+    printf("Size of Array:%d\n",sizeof(arr));
+    //pointer is 8byte in 64bit architecture 
+    printf("Size of Pointer: %d",sizeof(ptr));
+    
+    return 0;
+}
