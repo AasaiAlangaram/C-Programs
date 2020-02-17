@@ -1,0 +1,10 @@
+#include<stdio.h>
+int main()
+{
+ int _=10;
+ int __=10;
+ int ___;
+ ___=_+__;
+ printf("sum of two numbers : %i",___);
+ return 0;
+}
