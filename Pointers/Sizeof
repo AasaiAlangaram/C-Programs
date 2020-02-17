@@ -1,0 +1,24 @@
+#include  <stdio.h>
+
+int main(void)
+{
+    //declare a pointer to int
+    int *p;
+    //declare a pointer to char
+    char* c;
+    //declare a pointer to float
+    float *f;
+    //declare a pointer to double
+    double *d;
+    
+    printf("size of int pointer : %d\n",sizeof(int*));
+    printf("size of int pointer : %d\n",sizeof(char*));
+    printf("size of int pointer : %d\n",sizeof(float*));
+    printf("size of int pointer : %d\n",sizeof(double*));
+    
+    // size of contents that p,c,f,d points at 
+    printf("pointer -> int size : %d\n",sizeof(*p));
+    printf("pointer -> char size : %d\n",sizeof(*c));
+    printf("pointer -> float size : %d\n",sizeof(*f));
+    printf("pointer -> double size : %d\n",sizeof(*d));
+}
