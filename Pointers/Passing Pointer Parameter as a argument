@@ -1,0 +1,23 @@
+#include<stdio.h>
+void function(char**);
+void function2(int *);
+int main()
+{
+    int a = 10;
+	char *arr[] = { "ant", "bat", "cat", "dog", "egg", "fly" };
+	function(arr);
+    function2(&a);
+	return 0;
+}
+void function(char **ptr)
+{
+	char *ptr1;
+    printf("%s\n", ptr[0]);
+	ptr1 = (ptr += sizeof(int))[-1];
+	printf("%s\n", ptr1);
+}
+
+void function2(int *aa)
+{
+     printf("%d\n", *aa);
+}
