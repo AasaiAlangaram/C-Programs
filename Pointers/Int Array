@@ -1,0 +1,18 @@
+#include  <stdio.h>
+
+int main(void)
+{
+    int arr[10] = {1,2,3,4,5,6,7,8,9,10};
+    int *ptr;
+    
+    //Assigning array arr[0] to pointer variable
+    ptr = arr;
+    
+    for(int i = 0; i <10; i++)
+    {
+        printf("arr[%d] : The value is %d and address is %p\n",i, *ptr, ptr);
+        ptr++;
+    }
+    
+    return 0; 
+}
