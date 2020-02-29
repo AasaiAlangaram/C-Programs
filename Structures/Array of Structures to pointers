@@ -1,0 +1,29 @@
+//gcc 5.4.0
+
+#include  <stdio.h>
+
+int main(void)
+{
+    typedef struct strperson
+    {
+        char name[10];
+        int age;
+        
+    }person;
+    
+    person details[2] = {{"Aasai",25},
+                         {"Nanda",25}};
+    
+    person *ptr = &details;
+    
+    printf("The Person Name is %s\n",ptr->name);
+    printf("The Person Name is %s\n",(*ptr).name);
+    printf("The Person Name is %s\n",(ptr+1)->name);
+    
+    printf("The Person Age is %d\n",ptr->age);
+    printf("The Person Age is %d\n",(*ptr).age);
+    printf("The Person Name is %d\n",(ptr+1)->age);
+    
+    
+    return 0; 
+}
