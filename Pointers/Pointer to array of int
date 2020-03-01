@@ -1,0 +1,22 @@
+//gcc 5.4.0
+
+#include  <stdio.h>
+
+int main(void)
+{
+    int arr[5] = {1,2,3,4,5};
+    int *ptr;
+    int (*p)[5];
+    
+    ptr = arr;
+    p = arr;
+    
+    printf("Address: p - %p ptr - %p\n",p,ptr);
+    printf("Value: p - %p ptr - %d\n",*p,*ptr);
+    //Pointer size is 8bytes
+    printf("Size: p - %lu ptr - %lu\n",sizeof(p),sizeof(ptr));
+    //*p which points to base type of 5 integers
+    printf("Size: p - %lu ptr - %lu\n",sizeof(*p),sizeof(*ptr));
+    
+    return 0;
+}
