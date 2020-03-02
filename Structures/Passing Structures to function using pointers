@@ -1,0 +1,23 @@
+typedef struct _Test{
+   char* c;
+}Test;
+
+
+void method(void* test)
+{
+    Test *t = test;// defines a pointer to a Test
+    //((Test *) test)->c = "omg";
+    t->c = "omg";
+    printf(t->c); //WORKS
+}
+
+int main()
+{
+Test t;
+
+method(&t);
+t.c = "what?";
+printf(t.c);
+
+return 0;
+}
