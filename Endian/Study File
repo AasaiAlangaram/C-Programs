@@ -1,0 +1,113 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+#if 0
+#include <stdio.h> 
+int main()  
+{ 
+   unsigned int i = 1; 
+   char *c = (char *)&i; 
+   if (*c)     
+       printf("Little endian"); 
+   else
+       printf("Big endian"); 
+   getchar(); 
+   return 0; 
+} 
+#endif
+
+#if 0
+
+#include <stdio.h> 
+  
+/* function to show bytes in memory, from location start to start+n*/
+void show_mem_rep(unsigned char *start, int n)  
+{ 
+    int i; 
+    for (i = 0; i < n; i++)
+    {
+        printf("Decimal Representation : %d\t", start[i]);
+        printf("Hexadecimal Representation : %x\n", start[i]);
+    }
+    printf("\n"); 
+} 
+
+void dumpBytes(void *p, int n) {
+  int ii;
+  char hex[9];
+  for(ii = 0; ii < n; ii++) {
+    sprintf(hex, "%02x", (char)*((char*)p + ii));
+    printf("%s ", hex);
+    //printf("%s ", hex + strlen(hex)-2);printf("\n");
+  }
+  printf("\n");
+}
+
+/*Main function to call above function for 0x01234567*/
+int main() 
+{ 
+   //int i = 0x01234567; 
+   unsigned int i = 4; 
+   dumpBytes(&i,sizeof(i));
+   show_mem_rep((unsigned char *)&i, sizeof(i)); 
+   getchar(); 
+   return 0; 
+}
+
+#endif
+
+#if 1
+#include <stdio.h>
+#include <string.h>
+
+void dumpBytes(void *p, int n) {
+  int ii;
+  char hex[9];
+  for(ii = 0; ii < n; ii++) {
+    sprintf(hex, "%02x", (char)*((char*)p + ii));
+    printf("%s ", hex);
+    //printf("%s ", hex + strlen(hex)-2);printf("\n");
+  }
+  printf("\n");
+}
+
+int main(void) {
+static union job
+{
+    int a;
+    struct data
+    {
+        double b;
+        int x;
+    }q;
+} w;
+
+printf("%u",sizeof(w));
+
+printf("intial value:\n");
+dumpBytes(&w, sizeof(w));
+
+w.q.b=7;
+printf("setting w.q.b = 7:\n");
+dumpBytes(&w, sizeof(w.q.b));
+
+w.a=4;
+printf("setting w.a = 4:\n");
+dumpBytes(&w, sizeof(w));
+
+w.q.x=5;
+printf("setting w.q.x = 5:\n");
+dumpBytes(&w, sizeof(w));
+
+printf("values are now %d %d %.15lf\n",w.a,w.q.x,w.q.b);
+w.q.b=7;
+printf("setting w.q.b = 7:\n");
+dumpBytes(&w, sizeof(w));
+printf("values are now %d %d %.15lf\n",w.a,w.q.x,w.q.b);
+return 0;
+}
+#endif 
