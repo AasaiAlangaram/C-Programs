@@ -1,0 +1,23 @@
+#include <stdio.h> 
+  
+/* function to show bytes in memory, from location start to start+n*/
+void show_mem_rep(unsigned char *start, int n)  
+{ 
+    int i; 
+    for (i = 0; i < n; i++)
+    {
+        printf("Decimal Representation : %d\t", start[i]);
+        printf("Hexadecimal Representation : %x\n", start[i]);
+    }
+    printf("\n"); 
+} 
+  
+/*Main function to call above function for 0x01234567*/
+int main() 
+{ 
+   //int i = 0x01234567; 
+   unsigned int i = 1020; 
+   show_mem_rep((unsigned char *)&i, sizeof(i)); 
+   getchar(); 
+   return 0; 
+} 
