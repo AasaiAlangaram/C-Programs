@@ -1,0 +1,20 @@
+#include <stdio.h> 
+int main()  
+{ 
+   unsigned int i = 4294967294; 
+   unsigned char *c = (char *)&i; 
+   printf("Pointer 0 byte : %d\n", *(c+0));
+   printf("Pointer 1 byte : %d\n", *(c+1));
+   printf("Pointer 2 byte : %d\n", *(c+2));
+   printf("Pointer 3 byte : %d\n", *(c+3));
+   printf("Pointer 4 byte : %d\n", *(c+4));
+   printf("Pointer 5 byte : %d\n", *(c+5));
+   printf("Pointer 6 byte : %d\n", *(c+6));
+   printf("Pointer 7 byte : %d\n", *(c+7));
+   if (*c == 254)     
+       printf("Little endian"); 
+   else
+       printf("Big endian"); 
+   getchar(); 
+   return 0; 
+} 
