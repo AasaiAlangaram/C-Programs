@@ -24,6 +24,8 @@ static union job
     }q;
 } w;
 
+// In struct of the above program, there will be padding of 4 bytes after int member to make the structure size multiple of its alignment.
+// That's why the size of the union is 16bytes here 
 printf("Size of Double : %u\n",sizeof(w.q.b));
 printf("Size of Int : %d\n",sizeof(w.q.x));
 printf("Size of Structure : %u\n",sizeof(w.q));
@@ -63,4 +65,3 @@ printf("values are now %d %d %.15lf\n",w.a,w.q.x,w.q.b);
 
 return 0;
 }
-#endif 
