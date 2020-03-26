@@ -1,0 +1,176 @@
+#if 0
+#include <stdio.h>
+#include <string.h>
+
+void dumpBytes(void *p, int n) {
+  int ii;
+  char hex[9];
+  for(ii = 0; ii < n; ii++) {
+    sprintf(hex, "%02x", (char)*((char*)p + ii));
+    printf("%s ", hex);
+    /*printf("%s ", hex + strlen(hex)-2);printf("\n");*/
+  }
+  printf("\n");
+}
+
+int main(void) 
+{
+static union job
+{
+    int a;
+    struct data
+    {
+        double b;
+        int x;
+    }q;
+} w;
+
+printf("Size of Double : %u\n",sizeof(w.q.b));
+printf("Size of Int : %d\n",sizeof(w.q.x));
+printf("Size of Structure : %u\n",sizeof(w.q));
+
+printf("Size of Union : %u\n",sizeof(w.q));
+
+printf("Starting Address : %p\n",&w);
+printf("intial value: ");
+dumpBytes(&w, sizeof(w));
+
+
+printf("Struct Int w.q.b Address : %p\n",&w.q.b);
+printf("Struct Double w.q.b : ");
+dumpBytes(&w.q.b, sizeof(w.q.b));
+
+printf("Struct Int w.q.x Address : %p\n",&w.q.x);
+printf("Struct Int w.q.x : ");
+dumpBytes(&w.q.x, sizeof(w.q.x));
+
+printf("Union w.a Address : %p\n",&w.a);
+printf("Union w.a : ");
+dumpBytes(&w.a, sizeof(w.a));
+
+w.q.b=7;
+printf("setting w.q.b = 7:\n");
+dumpBytes(&w, sizeof(w.q.b));
+
+w.a=4;
+printf("setting w.a = 4:\n");
+dumpBytes(&w, sizeof(w));
+
+w.q.x=5;
+printf("setting w.q.x = 5:\n");
+dumpBytes(&w, sizeof(w));
+
+printf("values are now %d %d %.15lf\n",w.a,w.q.x,w.q.b);
+
+return 0;
+}
+#endif
+
+#include <stdio.h> 
+  
+// Alignment requirements 
+// (typical 32 bit machine) 
+  
+// char         1 byte 
+// short int    2 bytes 
+// int          4 bytes 
+// double       8 bytes 
+  
+// structure A 
+typedef struct structa_tag 
+{ 
+   char        c; 
+   short int   s; 
+} structa_t; 
+
+// structure B 
+typedef struct structb_tag 
+{ 
+   short int   s; 
+   char        c; 
+   int         i; 
+} structb_t; 
+  
+// structure C 
+typedef struct structc_tag 
+{ 
+   char        c; 
+   double      d; 
+   int         s; 
+} structc_t; 
+  
+// structure D 
+typedef struct structd_tag 
+{ 
+   double      d; 
+   int         s; 
+   char        c; 
+} structd_t; 
+
+#pragma pack(1)
+typedef struct structa_tagp 
+{ 
+   char        c; 
+   short int   s; 
+} structa_tp; 
+#pragma pack() 
+
+#pragma pack(1)
+// structure B 
+typedef struct structb_tagp 
+{ 
+   short int   s; 
+   char        c; 
+   int         i; 
+} structb_tp; 
+#pragma pack()
+ 
+#pragma pack(1)
+// structure C 
+typedef struct structc_tagp
+{ 
+   char        c; 
+   double      d; 
+   int         s; 
+} structc_tp; 
+#pragma pack()
+
+
+#pragma pack(1)  
+// structure D 
+typedef struct structd_tagp 
+{ 
+   double      d; 
+   int         s; 
+   char        c; 
+} structd_tp; 
+#pragma pack()
+
+struct name
+{
+    int i;
+    char c;
+    double d;
+    float f;
+}__attribute__((packed));
+
+struct name_p
+{
+    int i;
+    char c;
+    double d;
+    float f;
+}aasai_p;
+  
+int main() 
+{ 
+   struct name aasai;
+   printf("--With Padding          Without Padding--\n");        
+   printf("sizeof(structa_t) = %d\t", sizeof(structa_t)); printf("sizeof(structa_tp) = %d\n", sizeof(structa_tp));
+   printf("sizeof(structb_t) = %d\t", sizeof(structb_t)); printf("sizeof(structb_tp) = %d\n", sizeof(structb_tp));
+   printf("sizeof(structc_t) = %d\t", sizeof(structc_t)); printf("sizeof(structc_tp) = %d\n", sizeof(structc_tp));
+   printf("sizeof(structd_t) = %d\t", sizeof(structd_t)); printf("sizeof(structd_tp) = %d\n", sizeof(structd_tp));
+   
+   printf("sizeof(aasai) = %d\t", sizeof(aasai));   printf("sizeof(aasai_padding) = %d\t", sizeof(aasai_p));
+   return 0; 
+} 
