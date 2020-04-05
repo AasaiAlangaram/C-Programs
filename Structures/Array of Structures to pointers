@@ -1,20 +1,36 @@
-//gcc 5.4.0
-
 #include  <stdio.h>
 
 int main(void)
 {
+    /*
+    With padding the size of struct is 16bytes
+    without padding using pragma pack the size of struct is 14bytes
+    
+    Alignment in memory:
+    |0 1 2 3 4 5 6 7 8 9 | 10 11 |12 13 14 15 |
+    | char 10 bytes      | pad   | int 4 bytes|
+    
+    */
+    
+    #pragma pack(1)
     typedef struct strperson
     {
         char name[10];
         int age;
         
     }person;
+    #pragma pack()
     
     person details[2] = {{"Aasai",25},
                          {"Nanda",25}};
     
     person *ptr = &details;
+    
+    printf("Size of age:%d\n",sizeof(ptr->age));
+    printf("Size of details:%d\n",sizeof(details));
+    printf("Size of person:%d\n",sizeof(person));
+    printf("Size of pointer:%d\n",sizeof(ptr));
+    printf("Size of pointer:%d\n",sizeof(*ptr));
     
     printf("The Person Name is %s\n",ptr->name);
     printf("The Person Name is %s\n",(*ptr).name);
