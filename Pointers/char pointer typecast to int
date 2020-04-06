@@ -6,6 +6,13 @@ int main() {
     int *pt = (int *)&f;
     char *ptr = pt;
     
+    //Shifts the int pointer and save it in char pointer 
+    //Int pointer holds the value in bit0, so we need to left shift 32 times to get original value 
+    
+    char shift = shift | (*pt<<32);
+    
+    printf("%d \n", shift); 
+    
     printf("%d \n", *(ptr+0)); 
     printf("%d \n", *(ptr+1)); 
     printf("%d \n", *(ptr+2)); 
@@ -19,3 +26,4 @@ int main() {
     printf("%c", val);
     return 0;
 }
+#endif
