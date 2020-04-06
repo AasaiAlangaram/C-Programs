@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+
+    char f = 'a';
+    int *pt = (int *)&f;
+    char *ptr = pt;
+    
+    printf("%d \n", *(ptr+0)); 
+    printf("%d \n", *(ptr+1)); 
+    printf("%d \n", *(ptr+2)); 
+    printf("%d \n", *(ptr+3));
+    
+    printf("%d\n", *pt);
+    printf("%c\n", *pt);
+    
+    int val = (int)f;
+    printf("%d\n", val);
+    printf("%c", val);
+    return 0;
+}
