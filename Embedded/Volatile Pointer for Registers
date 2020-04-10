@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+int c = 324;
+
+#define address &c
+#define readcontentbutnotknowwheretoread (*&c)
+//force the type conversion to signed 32 bits, so we modify the definition to include the typecast.
+#define addressvalue (*(volatile int*)&c)
+
+int main()
+{
+    //bb becomes &c
+    int bb = address;
+    
+    //bbb becomes (*&c)
+    int bbb = readcontentbutnotknowwheretoread;
+    
+    //b becomes (*(volatile int*)&c)
+    int b = addressvalue;
+    
+    printf("Addressvalue : %d\n",b);
+    printf("Address : %d\n",bb);
+    printf("readcontentbutnotknowwheretoread : %d",bbb);
+    return 0;
