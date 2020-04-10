@@ -1,0 +1,75 @@
+#include<stdio.h>
+#include<time.h>
+
+typedef struct ex{
+    int x;
+}bar;
+
+
+int main(void)
+{
+    bar a[3] = {1,2,3}, *p;
+    
+    int arr[3] = {1,2,3}, *ip;
+    
+    double timetaken,timetaken1,timetaken2,timetaken3;
+    int i;
+    clock_t t,t1,t2,t3,t4;
+
+    t = clock();
+    // slow loop
+    for (i = 0; i < 3; ++i)
+    {
+        printf("%p\t::: ",&a[i]);
+        printf("%d\n",a[i].x);
+    }
+    t = clock() - t;
+    
+    //in seconds output
+    timetaken = ((double)t)/CLOCKS_PER_SEC;
+    
+    printf("Array subscripting(slow) for() took %f seconds to execute \n", timetaken); 
+    
+    t1 = clock();
+    // faster loop
+    for (p = a; p < &a[3]; ++p)
+    {
+        printf("%p\t::: ",p);
+        printf("%d\n", p->x);
+    }    
+    t1 = clock - t1;
+    
+    timetaken1 = ((double)t1)/CLOCKS_PER_SEC;
+    
+    printf("Array Pointers(fast) for() took %f seconds to execute \n", timetaken1); 
+    
+    t2 = clock();
+    // faster loop
+    for (ip = a; ip < &a[3]; ++ip)
+    {
+        printf("%p\t::: ",ip);
+        printf("%d\n", *ip);
+    }     
+    t2 = clock - t2;
+    
+    timetaken2 = ((double)t2)/CLOCKS_PER_SEC;
+    
+    printf("Array Pointers(fast) for() took %f seconds to execute \n", timetaken2); 
+    
+    
+    t3 = clock();
+    // faster loop
+    for (i = 0; i < 3; ++i)
+    {
+        printf("%p\t::: ",&arr[i]);
+        printf("%d\n",arr[i]);
+    }
+    t3 = clock() - t3;
+    
+    //in seconds output
+    timetaken3 = ((double)t3)/CLOCKS_PER_SEC;
+    
+    printf("Array Pointers(fast) for() took %f seconds to execute \n", timetaken3); 
+    
+    return 0;
+}
