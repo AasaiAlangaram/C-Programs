@@ -1,0 +1,99 @@
+#include <stdio.h> 
+
+#define assertparam(expr) ((expr)?(void)0 : asserfailed())
+
+#define Isok(val) ((sizeof(unsigned int) - 1) == val)
+// Alignment requirements 
+// (typical 32 bit machine) 
+  
+// char         1 byte 
+// short int    2 bytes 
+// int          4 bytes 
+// double       8 bytes 
+  
+// structure A 
+typedef struct structa_tag 
+{ 
+   char        c; 
+   short int   s; 
+} structa_t; 
+
+// structure B 
+typedef struct structb_tag 
+{ 
+   short int   s; 
+   char        c; 
+   int         i; 
+} structb_t; 
+  
+// structure C 
+typedef struct structc_tag 
+{ 
+   char        c; 
+   double      d; 
+   int         s; 
+} structc_t; 
+  
+// structure D 
+typedef struct structd_tag 
+{ 
+   double      d; 
+   int         s; 
+   char        c; 
+} structd_t; 
+
+#pragma pack(1)
+typedef struct structa_tagp 
+{ 
+   char        c; 
+   short int   s; 
+} structa_tp; 
+#pragma pack() 
+
+#pragma pack(1)
+// structure B 
+typedef struct structb_tagp 
+{ 
+   short int   s; 
+   char        c; 
+   int         i; 
+} structb_tp; 
+#pragma pack()
+ 
+#pragma pack(1)
+// structure C 
+typedef struct structc_tagp
+{ 
+   char        c; 
+   double      d; 
+   int         s; 
+} structc_tp; 
+#pragma pack()
+
+
+#pragma pack(1)  
+// structure D 
+typedef struct structd_tagp 
+{ 
+   double      d; 
+   int         s; 
+   char        c; 
+} structd_tp; 
+#pragma pack()
+
+void asserfailed()
+{
+    printf("Size Exceeds\n");
+}
+
+int main() 
+{ 
+   assertparam(Isok(sizeof(structa_t) > 3));
+   printf("--With Padding          Without Padding--\n");        
+   printf("sizeof(structa_t) = %d\t", sizeof(structa_t)); printf("sizeof(structa_tp) = %d\n", sizeof(structa_tp));
+   printf("sizeof(structb_t) = %d\t", sizeof(structb_t)); printf("sizeof(structb_tp) = %d\n", sizeof(structb_tp));
+   printf("sizeof(structc_t) = %d\t", sizeof(structc_t)); printf("sizeof(structc_tp) = %d\n", sizeof(structc_tp));
+   printf("sizeof(structd_t) = %d\t", sizeof(structd_t)); printf("sizeof(structd_tp) = %d\n", sizeof(structd_tp));
+  
+   return 0; 
+} 
