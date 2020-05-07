@@ -22,6 +22,7 @@ data godata[3];
 */
 void getdata(const data samedata[])
 {
+    // To avoid warning we need to typecasrt here. It is recommended method
     samedataarray[0] = (data*)(&samedata[0]);
     
     printf("In Function getdata overwritten :%d\n",samedata[0].a);
@@ -41,6 +42,8 @@ int main(void)
     printf("In Function Main :%d\n",godata[0].b);
     printf("In Function Main :%d\n",godata[0].c);
     
+    // Passing Structure array 
+    // you have to send with poiter typecasted to calling Function
     getdata((data *)&godata);
     
     return 0;
