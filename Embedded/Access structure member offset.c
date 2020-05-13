@@ -6,6 +6,11 @@
 ((struct name*)0)->member gives you the member of the struct where the pointer points to.
 
 Adding & gives you the address of that member, and lastly
+
+This is a trick for getting the offset of struct's member called member. 
+The idea behind this approach is to have the compiler compute the address 
+of member assuming that the structure itself is located at address zero.
+
 */
 struct name
 {
