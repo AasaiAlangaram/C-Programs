@@ -1,0 +1,34 @@
+#include<stdio.h>
+
+typedef unsigned char byte;
+
+struct rf_details {
+    byte rfTag[4];
+    unsigned int rftag_dec;
+};
+
+const struct rf_details stop_rf[] = {
+    {{0X16,0XFF,0X10,0X12},{1}},
+    {{0X16,0XFF,0X10,0X12},{2}},
+    {{0X16,0XFF,0X10,0X12},{3}},
+    {{0X16,0XFF,0X10,0X12},{4}},
+    {{0X16,0XFF,0X10,0X12},{5}}
+};
+
+int main()
+{
+	int i = 0,j=0;
+	
+	for(i=0;i<4;i++)
+	{
+
+		printf("%d\t %d\n",stop_rf[0].data[0],stop_rf[0].rfTag[i]);
+		printf("%d\t %d\n",stop_rf[1].data[0],stop_rf[1].rfTag[i]);
+		printf("%d\t %d\n",stop_rf[2].data[0],stop_rf[2].rfTag[i]);
+		printf("%d\t %d\n",stop_rf[3].data[0],stop_rf[3].rfTag[i]);
+		printf("%d\t %d\n",stop_rf[4].data[0],stop_rf[4].rfTag[i]);
+	
+	}
+	
+	return 0;
+}
