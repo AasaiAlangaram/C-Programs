@@ -1,0 +1,11 @@
+Display all prime numbers between two Intervals
+Check prime and Armstrong number by making functions
+Check whether a number can be expressed as the sum of two prime numbers
+Find the sum of natural numbers using recursion
+Calculate the factorial of a number using recursion
+Find G.C.D using recursion
+Reverse a sentence using recursion
+Calculate the power of a number using recursion
+Convert a binary number to decimal and vice-versa
+Convert an octal Number to decimal and vice-versa
+Convert a binary number to octal and vice-versa
