@@ -1,0 +1,133 @@
+1. Write a program in C to store elements in an array and print it. 
+Test Data :
+Input 10 elements in the array :
+element - 0 : 1
+element - 1 : 1
+element - 2 : 2
+.......
+Expected Output :
+Elements in array are: 1 1 2 3 4 5 6 7 8 9
+
+
+2. Write a program in C to read n number of values in an array and display it in reverse order. 
+Test Data :
+Input the number of elements to store in the array :3
+Input 3 number of elements in the array :
+element - 0 : 2
+element - 1 : 5
+element - 2 : 7
+Expected Output :
+The values store into the array are :
+2 5 7
+The values store into the array in reverse are :
+7 5 2
+
+
+3. Write a program in C to find the sum of all elements of the array. 
+Test Data :
+Input the number of elements to be stored in the array :3
+Input 3 elements in the array :
+element - 0 : 2
+element - 1 : 5
+element - 2 : 8
+Expected Output :
+Sum of all elements stored in the array is : 15
+
+
+4. Write a program in C to copy the elements of one array into another array. 
+Test Data :
+Input the number of elements to be stored in the array :3
+Input 3 elements in the array :
+element - 0 : 15
+element - 1 : 10
+element - 2 : 12
+Expected Output :
+The elements stored in the first array are :
+15 10 12
+The elements copied into the second array are :
+15 10 12
+
+
+5. Write a program in C to count a total number of duplicate elements in an array. 
+Test Data :
+Input the number of elements to be stored in the array :3
+Input 3 elements in the array :
+element - 0 : 5
+element - 1 : 1
+element - 2 : 1
+Expected Output :
+Total number of duplicate elements found in the array is : 1
+
+
+6. Write a program in C to print all unique elements in an array. 
+Test Data :
+Print all unique elements of an array:
+------------------------------------------
+Input the number of elements to be stored in the array: 4
+Input 4 elements in the array :
+element - 0 : 3
+element - 1 : 2
+element - 2 : 2
+element - 3 : 5
+Expected Output :
+The unique elements found in the array are:
+3 5
+
+
+7. Write a program in C to merge two arrays of same size sorted in decending order. 
+Test Data :
+Input the number of elements to be stored in the first array :3
+Input 3 elements in the array :
+element - 0 : 1
+element - 1 : 2
+element - 2 : 3
+Input the number of elements to be stored in the second array :3
+Input 3 elements in the array :
+element - 0 : 1
+element - 1 : 2
+element - 2 : 3
+Expected Output :
+The merged array in decending order is :
+3 3 2 2 1 1
+
+
+8. Write a program in C to count the frequency of each element of an array. 
+Test Data :
+Input the number of elements to be stored in the array :3
+Input 3 elements in the array :
+element - 0 : 25
+element - 1 : 12
+element - 2 : 43
+Expected Output :
+The frequency of all elements of an array :
+25 occurs 1 times
+12 occurs 1 times
+43 occurs 1 times
+
+
+9. Write a program in C to find the maximum and minimum element in an array. 
+Test Data :
+Input the number of elements to be stored in the array :3
+Input 3 elements in the array :
+element - 0 : 45
+element - 1 : 25
+element - 2 : 21
+Expected Output :
+Maximum element is : 45
+Minimum element is : 21
+
+
+10. Write a program in C to separate odd and even integers in separate arrays. 
+Test Data :
+Input the number of elements to be stored in the array :5
+Input 5 elements in the array :
+element - 0 : 25
+element - 1 : 47
+element - 2 : 42
+element - 3 : 56
+element - 4 : 32
+Expected Output :
+The Even elements are :
+42 56 32
+The Odd elements are :
+25 47
