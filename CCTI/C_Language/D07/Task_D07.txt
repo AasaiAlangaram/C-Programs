@@ -1,0 +1,50 @@
+1. Write a program in C to input a string and print it. 
+
+Test Data :
+Input the string : Welcome, w3resource
+
+Expected Output :
+
+The string you entered is : Welcome, w3resource 
+
+
+2. Write a program in C to find the length of a string without using library function. 
+
+Test Data :
+Input the string : w3resource.com
+
+Expected Output :
+
+Length of the string is : 15 
+
+
+3. Write a program in C to separate the individual characters from a string. 
+
+Test Data :
+Input the string : w3resource.com
+
+Expected Output :
+
+The characters of the string are : 
+w  3  r  e  s  o  u  r  c  e  .  c  o  m 
+
+
+4. Write a program in C to print individual characters of string in reverse order. 
+
+Test Data :
+Input the string : w3resource.com
+
+Expected Output :
+
+The characters of the string in reverse are :
+m  o  c  .  e  c  r  u  o  s  e  r  3  w 
+
+
+5. Write a program in C to count the total number of words in a string. 
+
+Test Data :
+Input the string : This is w3resource.com
+
+Expected Output :
+
+Total number of words in the string is : 3 
