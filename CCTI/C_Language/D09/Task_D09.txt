@@ -1,0 +1,24 @@
+1.C program to create, declare and initialize structure.
+This program will define a structure, declare an object of the structure and initialize the structure members.
+2.C program to read and print an employee's detail using structure.
+This program will read and print the employee's details like name, employee id, salary etc using structure.
+3.C program to demonstrate example of nested structure.
+This program will demonstrate example of Nested Structure in C language, how to define, declare and access the nested structure?
+4.C program to demonstrate example structure pointer (structure with pointer).
+This program will demonstrate example of pointer to structure, structure pointer in C.
+5.C program to demonstrate example structure pointer (structure with pointer) using user define function.
+This program will demonstrate example of pointer to structure, structure pointer using USER DEFINE FUNCTION in C.
+6.C program to declare, initialize an union, example of union.
+Union example: this program will demonstrate example of union, how to define, declare a union and how to access of the members of union?
+7.C program to demonstrate example of structure of array.
+Structure of Array: this program will demonstrate example of structure of array, how to declare an array within structure how to access its elements?
+8.C program to add two distances in feet and inches using structure.
+This program will read two distances in feet and inches and add them; final result will be printed in the form of feet and inches using structure in C.
+9.C program to extract individual bytes from an unsigned int using union.
+This program will read an integer number and extract its bytes using union in C language.
+10.C program for passing structures as function arguments and returning a structure from a function.
+This program will demonstrate example for passing Structures as function arguments and returning a structure from a function in C language.
+11.Calculate party expenses using C program.
+This program will read and calculate item prices used in party and divide the expenses amount in friends equally in C programming language.
+12.C program to find the size of the union
+Here, we will create a union with some members and then we print the size of the union on the console screen. The union allocates the space of one member at a time.
